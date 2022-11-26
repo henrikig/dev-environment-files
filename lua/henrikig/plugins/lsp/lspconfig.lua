@@ -68,10 +68,24 @@ lspconfig["pyright"].setup({
 	on_attach = on_attach,
 })
 
--- configure html server
-lspconfig["rust_analyzer"].setup({
-	capabilities = capabilities,
+lspconfig.rust_analyzer.setup({
 	on_attach = on_attach,
+	flags = {
+		debounce_text_changes = 150,
+	},
+	settings = {
+		["rust-analyzer"] = {
+			cargo = {
+				allFeatures = true,
+			},
+			completion = {
+				postfix = {
+					enable = false,
+				},
+			},
+		},
+	},
+	capabilities = capabilities,
 })
 
 -- configure typescript server with plugin
