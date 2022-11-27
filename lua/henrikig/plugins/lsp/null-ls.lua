@@ -18,6 +18,9 @@ null_ls.setup({
 		--  to disable file types use
 		--  "formatting.prettier.with({disabled_filetypes: {}})" (see null-ls docs)
 		formatting.black, -- js/ts formatter
+		null_ls.builtins.formatting.deno_fmt.with({
+			filetypes = { "markdown" }, -- only runs `deno fmt` for markdown
+		}),
 		formatting.rustfmt, -- js/ts formatter
 		formatting.stylua, -- lua formatter
 		diagnostics.eslint_d.with({ -- js/ts linter

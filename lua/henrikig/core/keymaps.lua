@@ -7,8 +7,9 @@ local keymap = vim.keymap -- for conciseness
 -- General Keymaps
 ---------------------
 
--- use jk to exit insert mode
+-- use jk to exit insert or visual mode
 keymap.set("i", "jk", "<ESC>")
+keymap.set("v", "jk", "<ESC>")
 
 -- clear search highlights
 keymap.set("n", "<leader>nh", ":nohl<CR>")
@@ -18,6 +19,10 @@ keymap.set("n", "x", '"_x')
 
 -- toggle between buffers
 keymap.set("n", "<leader><leader>", "<c-^>")
+
+-- insert new line normal mode
+keymap.set("n", "no", "o<esc>")
+keymap.set("n", "NO", "O<esc>")
 
 -- increment/decrement numbers
 keymap.set("n", "<leader>+", "<C-a>") -- increment
@@ -61,3 +66,6 @@ keymap.set("n", "<leader>gs", "<cmd>Telescope git_status<cr>") -- list current c
 
 -- restart lsp server (not on youtube nvim video)
 keymap.set("n", "<leader>rs", ":LspRestart<CR>") -- mapping to restart lsp if necessary
+
+-- lazygit
+vim.api.nvim_set_keymap("n", "<leader>gg", "<cmd>lua _LAZYGIT_TOGGLE()<CR>", { noremap = true, silent = true })

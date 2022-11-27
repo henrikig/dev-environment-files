@@ -4,7 +4,7 @@ if not status then
 end
 
 toggleterm.setup({
-	size = 80,
+	size = 20,
 	open_mapping = [[<c-n>]],
 	hide_numbers = true,
 	shade_filetypes = {},
@@ -13,7 +13,7 @@ toggleterm.setup({
 	start_in_insert = true,
 	insert_mappings = true,
 	persist_size = true,
-	direction = "vertical",
+	direction = "float",
 	close_on_exit = true,
 	shell = vim.o.shell,
 	float_opts = {
@@ -44,4 +44,10 @@ local python = Terminal:new({ cmd = "python", hidden = true })
 
 function _PYTHON_TOGGLE()
 	python:toggle()
+end
+
+local lazygit = Terminal:new({ cmd = "lazygit", hidden = true })
+
+function _LAZYGIT_TOGGLE()
+	lazygit:toggle()
 end

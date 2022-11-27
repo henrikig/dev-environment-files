@@ -40,6 +40,7 @@ mason_null_ls.setup({
 	ensure_installed = {
 		"black",
 		"rustfmt",
+		"markdownlint",
 		"stylua", -- lua formatter
 		"eslint_d", -- ts/js linter
 	},

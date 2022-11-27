@@ -102,10 +102,11 @@ lspconfig["cssls"].setup({
 	on_attach = on_attach,
 })
 
--- configure tailwindcss server
-lspconfig["tailwindcss"].setup({
+-- configure emmet language server
+lspconfig["marksman"].setup({
 	capabilities = capabilities,
 	on_attach = on_attach,
+	filetypes = { "html", "typescriptreact", "javascriptreact", "css", "sass", "scss", "less", "svelte" },
 })
 
 -- configure emmet language server
