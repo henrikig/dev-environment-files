@@ -2,10 +2,11 @@
 
 ### Vertical navigation
 
-| Command  | Description    |
-| -------- | -------------- |
-| ctrl + u | Half page up   |
-| ctrl + d | Half page down |
+| Command  | Description                              |
+| -------- | ---------------------------------------- |
+| ctrl + u | Half page up                             |
+| ctrl + d | Half page down                           |
+| %        | Toggle between opening and closing ()/{} |
 
 ### Horizontal navigation
 
@@ -23,6 +24,7 @@
 | vi)     | Selects everything inside parantheses     |
 | vib     | Selects everything inside parantheses (() |
 | viB     | Selects everything inside parantheses (}) |
+| vap     | Select current paragraph                  |
 
 ### Text manipulation
 
