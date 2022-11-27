@@ -102,6 +102,12 @@ lspconfig["cssls"].setup({
 	on_attach = on_attach,
 })
 
+-- configure terraform server
+lspconfig["terraformls"].setup({
+	capabilities = capabilities,
+	on_attach = on_attach,
+})
+
 -- configure emmet language server
 lspconfig["marksman"].setup({
 	capabilities = capabilities,
