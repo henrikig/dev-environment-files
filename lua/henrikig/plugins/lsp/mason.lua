@@ -43,6 +43,7 @@ mason_null_ls.setup({
 		"markdownlint",
 		"stylua", -- lua formatter
 		"eslint_d", -- ts/js linter
+		"terraform_fmt",
 	},
 	-- auto-install configured formatters & linters (with null-ls)
 	automatic_installation = true,

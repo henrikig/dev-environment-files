@@ -18,9 +18,11 @@
 
 ### Text selection
 
-| Command | Description                           |
-| ------- | ------------------------------------- |
-| vi)     | Selects everything inside parantheses |
+| Command | Description                               |
+| ------- | ----------------------------------------- |
+| vi)     | Selects everything inside parantheses     |
+| vib     | Selects everything inside parantheses (() |
+| viB     | Selects everything inside parantheses (}) |
 
 ### Text manipulation
 
