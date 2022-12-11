@@ -16,6 +16,11 @@ if not typescript_setup then
 	return
 end
 
+local status, rt = pcall(require, "rust-tools")
+if not status then
+	return
+end
+
 local keymap = vim.keymap -- for conciseness
 
 -- enable keybinds only for when lsp server available
@@ -68,25 +73,37 @@ lspconfig["pyright"].setup({
 	on_attach = on_attach,
 })
 
-lspconfig.rust_analyzer.setup({
-	on_attach = on_attach,
-	flags = {
-		debounce_text_changes = 150,
-	},
-	settings = {
-		["rust-analyzer"] = {
-			cargo = {
-				allFeatures = true,
-			},
-			completion = {
-				postfix = {
-					enable = false,
-				},
-			},
-		},
-	},
+lspconfig["jsonls"].setup({
 	capabilities = capabilities,
+	on_attach = on_attach,
 })
+
+rt.setup({
+	server = {
+		on_attach = on_attach,
+		capabilities = capabilities,
+	},
+})
+
+-- lspconfig.rust_analyzer.setup({
+-- 	on_attach = on_attach,
+-- 	flags = {
+-- 		debounce_text_changes = 150,
+-- 	},
+-- 	settings = {
+-- 		["rust-analyzer"] = {
+-- 			cargo = {
+-- 				allFeatures = true,
+-- 			},
+-- 			completion = {
+-- 				postfix = {
+-- 					enable = false,
+-- 				},
+-- 			},
+-- 		},
+-- 	},
+-- 	capabilities = capabilities,
+-- })
 
 -- configure typescript server with plugin
 typescript.setup({
@@ -102,10 +119,17 @@ lspconfig["cssls"].setup({
 	on_attach = on_attach,
 })
 
+-- configure docker server
+lspconfig["dockerls"].setup({
+	capabilities = capabilities,
+	on_attach = on_attach,
+})
+
 -- configure terraform server
 lspconfig["terraformls"].setup({
 	capabilities = capabilities,
 	on_attach = on_attach,
+	filetypes = { "terraform", "terraform-vars", "tf" },
 })
 
 -- configure emmet language server

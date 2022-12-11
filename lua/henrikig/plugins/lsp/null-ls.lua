@@ -22,12 +22,14 @@ null_ls.setup({
 			filetypes = { "markdown" }, -- only runs `deno fmt` for markdown
 		}),
 		formatting.rustfmt, -- js/ts formatter
-		formatting.terraform_fmt,
+		formatting.terraform_fmt.with({
+			filetypes = { "terraform", "terraform-vars", "tf" },
+		}),
 		formatting.stylua, -- lua formatter
 		diagnostics.eslint_d.with({ -- js/ts linter
 			-- only enable eslint if root has .eslintrc.js (not in youtube nvim video)
 			condition = function(utils)
-				return utils.root_has_file(".eslintrc.js") -- change file extension if you use something else
+				return utils.root_has_file(".prettierrc.js") -- change file extension if you use something else
 			end,
 		}),
 	},
