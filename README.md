@@ -51,4 +51,4 @@
 | --------------------------------- | ------------------------------------------------------- |
 | :vimgrep /Neovim/gj \*\*/\*       | Search for all occurences of Neovim and fill quicklist  |
 | :cfdo %s/Neovim/Nvim/ge \| update | Replace all occurences of Neovim in quicklist with Nvim |
-| /foo <CR> cgn bar <Esc> .         | Change occurnce of "foo" to "bar", press "." to repeat  |
+| /foo CR cgn bar Esc .             | Change occurnce of "foo" to "bar", press "." to repeat  |
