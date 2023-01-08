@@ -44,3 +44,10 @@
 | <leader>tx     | Close current terminal window          |
 | <leader>tn     | Go to next terminal tab                |
 | <leader>tp     | Go to previous terminal tab            |
+
+### Searching
+
+| Command                           | Description                                             |
+| --------------------------------- | ------------------------------------------------------- |
+| :vimgrep /Neovim/gj \*\*/\*       | Search for all occurences of Neovim and fill quicklist  |
+| :cfdo %s/Neovim/Nvim/ge \| update | Replace all occurences of Neovim in quicklist with Nvim |
