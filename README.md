@@ -6,6 +6,8 @@
 | -------- | ---------------------------------------- |
 | ctrl + u | Half page up                             |
 | ctrl + d | Half page down                           |
+| ctrl + e | Move viewport one down                   |
+| ctrl + y | Move viewport one up                     |
 | %        | Toggle between opening and closing ()/{} |
 
 ### Horizontal navigation
@@ -28,10 +30,13 @@
 
 ### Text manipulation
 
-| Command                | Description                              |
-| ---------------------- | ---------------------------------------- |
-| C-v, <j/k>, I, --, Esc | Comment out block of code (here with --) |
-| C-v, <j/k/h/l>, X      | Remove block comment                     |
+| Command                | Description                                   |
+| ---------------------- | --------------------------------------------- |
+| C-v, <j/k>, I, --, Esc | Comment out block of code (here with --)      |
+| C-v, <j/k/h/l>, X      | Remove block comment                          |
+| :-10t.                 | Copy text on ten lines above and paste below  |
+| :t10                   | Copy the current line and paste below line 10 |
+| :10,20t.               | Copy lines 10 to 20 and paste below           |
 
 ### Window management
 
