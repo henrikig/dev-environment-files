@@ -23,7 +23,7 @@ mason_lspconfig.setup({
 	-- list of servers for mason to install
 	ensure_installed = {
 		"tsserver",
-		"sumneko_lua",
+		"lua_ls",
 		"rust_analyzer",
 		"dockerls",
 		"jsonls",
