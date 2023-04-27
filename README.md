@@ -1,4 +1,4 @@
-# Cheat Sheet for Vim commands
+# Cheat Sheet for (n)vim commands
 
 ### Vertical navigation
 
