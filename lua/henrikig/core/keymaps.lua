@@ -67,5 +67,13 @@ keymap.set("n", "<leader>gs", "<cmd>Telescope git_status<cr>") -- list current c
 -- restart lsp server (not on youtube nvim video)
 keymap.set("n", "<leader>rs", ":LspRestart<CR>") -- mapping to restart lsp if necessary
 
+-- copilot remap tab to Ctrl + Enter
+vim.g.copilot_no_tab_map = true
+vim.g.copilot_assume_mapped = true
+vim.api.nvim_set_keymap("i", "<C-CR>", 'copilot#Accept("<CR>")', { silent = true, expr = true })
+vim.api.nvim_set_keymap("i", "<M-]>", "<Plug>(copilot-next)", { noremap = true })
+vim.api.nvim_set_keymap("i", "<M-[>", "<Plug>(copilot-previous)", { noremap = true })
+vim.api.nvim_set_keymap("i", "<C-]>", "<Plug>(copilot-dismiss)", { noremap = true })
+
 -- lazygit
 vim.api.nvim_set_keymap("n", "<leader>gg", "<cmd>lua _LAZYGIT_TOGGLE()<CR>", { noremap = true, silent = true })

@@ -104,6 +104,9 @@ return packer.startup(function(use)
 
 	use("akinsho/toggleterm.nvim") -- show line modifications on left hand side
 
+	-- github copilot
+	use("github/copilot.vim") -- show line modifications on left hand side
+
 	if packer_bootstrap then
 		require("packer").sync()
 	end
