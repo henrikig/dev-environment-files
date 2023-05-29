@@ -23,7 +23,7 @@ null_ls.setup({
 		}),
 		formatting.rustfmt, -- js/ts formatter
 		formatting.terraform_fmt.with({
-			filetypes = { "terraform", "terraform-vars", "tf" },
+			filetypes = { "terraform", "terraform-vars", "tf", "tfvars" },
 		}),
 		formatting.stylua, -- lua formatter
 		diagnostics.eslint_d.with({ -- js/ts linter
