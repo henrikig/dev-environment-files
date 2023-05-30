@@ -108,6 +108,9 @@ return packer.startup(function(use)
 	-- github copilot
 	use("github/copilot.vim") -- show line modifications on left hand side
 
+	-- file navigation
+	use("theprimeagen/harpoon")
+
 	if packer_bootstrap then
 		require("packer").sync()
 	end
