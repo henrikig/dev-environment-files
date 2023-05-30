@@ -1,4 +1,8 @@
-# Cheat Sheet for (n)vim commands
+# dev-environment-files
+
+Dev environment files for Neovim and tmux.
+
+## Cheat Sheet for (n)vim commands
 
 ### Vertical navigation
 
@@ -57,3 +61,29 @@
 | :vimgrep /Neovim/gj \*\*/\*       | Search for all occurences of Neovim and fill quicklist  |
 | :cfdo %s/Neovim/Nvim/ge \| update | Replace all occurences of Neovim in quicklist with Nvim |
 | /foo CR cgn bar Esc .             | Change occurnce of "foo" to "bar", press "." to repeat  |
+
+## tmux
+
+To use tmux, install it with homebrew first:
+
+```sh
+brew install tmux
+```
+
+Create a symlink pointing to the tmux config file in this repository:
+
+```sh
+ln -s ~/.config/nvim/.tmux.conf ~/.tmux.conf
+```
+
+Install tmux package manager:
+
+```sh
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+```
+
+Install dependencies:
+
+```sh
+brew install fzf
+```
