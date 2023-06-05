@@ -36,6 +36,14 @@ keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 keymap.set("n", "<C-u>", "<C-u>zz")
 keymap.set("n", "<C-d>", "<C-d>zz")
 
+-- delete word under cursor on enter
+keymap.set("n", "<CR>", "ciw")
+keymap.set("n", "<S-CR>", "ciW")
+
+-- leader + w to save file
+keymap.set("n", "<leader>w", ":w<CR>")
+keymap.set("n", "<leader>q", ":q<CR>")
+
 -- window management
 keymap.set("n", "<leader>sv", "<C-w>v") -- split window vertically
 keymap.set("n", "<leader>sh", "<C-w>s") -- split window horizontally
