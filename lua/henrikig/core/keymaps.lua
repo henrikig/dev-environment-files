@@ -91,7 +91,7 @@ keymap.set("n", "<leader>rs", ":LspRestart<CR>") -- mapping to restart lsp if ne
 vim.g.copilot_no_tab_map = true
 vim.g.copilot_assume_mapped = true
 vim.api.nvim_set_keymap("i", "<C-k>", 'copilot#Accept("<CR>")', { silent = true, expr = true })
-vim.api.nvim_set_keymap("i", "<C-CR>", 'copilot#Accept("<CR>")', { silent = true, expr = true })
+vim.api.nvim_set_keymap("i", "<C-a>", 'copilot#Accept("<CR>")', { silent = true, expr = true })
 vim.api.nvim_set_keymap("i", "<M-]>", "<Plug>(copilot-next)", { noremap = true })
 vim.api.nvim_set_keymap("i", "<M-[>", "<Plug>(copilot-previous)", { noremap = true })
 vim.api.nvim_set_keymap("i", "<C-]>", "<Plug>(copilot-dismiss)", { noremap = true })
