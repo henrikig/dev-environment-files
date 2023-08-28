@@ -40,6 +40,10 @@ keymap.set("n", "<C-d>", "<C-d>zz")
 keymap.set("n", "<CR>", "ciw")
 keymap.set("n", "<S-CR>", "ciW")
 
+-- jump to start/end of line with H/L
+keymap.set("n", "H", "^")
+keymap.set("n", "L", "$")
+
 -- leader + w to save file
 keymap.set("n", "<leader>w", ":w<CR>")
 keymap.set("n", "<leader>q", ":q<CR>")
@@ -90,8 +94,8 @@ keymap.set("n", "<leader>rs", ":LspRestart<CR>") -- mapping to restart lsp if ne
 -- copilot remap tab to Ctrl + Enter
 vim.g.copilot_no_tab_map = true
 vim.g.copilot_assume_mapped = true
+vim.api.nvim_set_keymap("i", "<C-B>", 'copilot#Accept("<CR>")', { silent = true, expr = true })
 vim.api.nvim_set_keymap("i", "<C-k>", 'copilot#Accept("<CR>")', { silent = true, expr = true })
-vim.api.nvim_set_keymap("i", "<C-a>", 'copilot#Accept("<CR>")', { silent = true, expr = true })
 vim.api.nvim_set_keymap("i", "<M-]>", "<Plug>(copilot-next)", { noremap = true })
 vim.api.nvim_set_keymap("i", "<M-[>", "<Plug>(copilot-previous)", { noremap = true })
 vim.api.nvim_set_keymap("i", "<C-]>", "<Plug>(copilot-dismiss)", { noremap = true })
