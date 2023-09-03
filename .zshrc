@@ -152,9 +152,12 @@ prompt pure
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 alias ls="exa -la"
-alias tfp="terraform plan -lock=false"
 alias cl="clear"
 alias vim="nvim"
+
+# terraform
+alias tfp="terraform plan -lock=false"
+alias tfsl="terraform state list"
 
 
 
