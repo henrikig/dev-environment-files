@@ -154,6 +154,7 @@ prompt pure
 alias ls="exa -la"
 alias cl="clear"
 alias vim="nvim"
+alias fzf="fzf --print0 | xargs -0 -o nvim"
 
 # terraform
 alias tfp="terraform plan -lock=false"
