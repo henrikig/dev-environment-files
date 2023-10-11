@@ -10,10 +10,21 @@ if not actions_setup then
 	return
 end
 
+local telescope_config = require("telescope.config")
+
+-- Clone the default Telescope configuration
+local vimgrep_arguments = { unpack(telescope_config.values.vimgrep_arguments) }
+
+table.insert(vimgrep_arguments, "--hidden")
+table.insert(vimgrep_arguments, "--follow")
+table.insert(vimgrep_arguments, "--glob")
+table.insert(vimgrep_arguments, "!**/.git/*")
+
 -- configure telescope
 telescope.setup({
 	-- configure custom mappings
 	defaults = {
+		vimgrep_arguments = vimgrep_arguments,
 		mappings = {
 			i = {
 				["<C-k>"] = actions.move_selection_previous, -- move to prev result
