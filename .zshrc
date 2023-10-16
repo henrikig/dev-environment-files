@@ -154,7 +154,20 @@ prompt pure
 alias ls="exa -la"
 alias cl="clear"
 alias vim="nvim"
-alias fzf="fzf --print0 | xargs -0 -o nvim"
+alias fzv="fzf --print0 | xargs -0 -o nvim"
+
+# Define the function
+dkill() {
+  # Get the list of running containers
+  containers=$(docker ps --format '{{.Names}}')
+
+  # Use fzf to select a container
+  selected_container=$(echo "$containers" | fzf)
+
+  # Kill the selected container
+  docker kill "$selected_container"
+}
+
 
 # terraform
 alias tfp="terraform plan -lock=false"
