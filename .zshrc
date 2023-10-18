@@ -154,7 +154,7 @@ prompt pure
 alias ls="exa -la"
 alias cl="clear"
 alias vim="nvim"
-alias fzv="fzf --print0 | xargs -0 -o nvim"
+alias ff="fzf --print0 --cycle --bind 'tab:toggle-up,btab:toggle-down' | xargs -0 -o nvim"
 
 # Define the function
 dkill() {
@@ -162,10 +162,14 @@ dkill() {
   containers=$(docker ps --format '{{.Names}}')
 
   # Use fzf to select a container
-  selected_container=$(echo "$containers" | fzf)
+  selected_container=$(echo "$containers" | fzf --cycle --bind 'tab:toggle-up,btab:toggle-down')
 
   # Kill the selected container
   docker kill "$selected_container"
+}
+
+gfb() {
+  git branch  | grep -v "^\*" | fzf --height=20% --info=inline --reverse --cycle --bind 'tab:toggle-down,btab:toggle-up' | xargs git checkout
 }
 
 
