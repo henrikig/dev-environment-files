@@ -22,14 +22,15 @@ mason.setup()
 mason_lspconfig.setup({
 	-- list of servers for mason to install
 	ensure_installed = {
-		"tsserver",
-		"lua_ls",
-		"rust_analyzer",
 		"dockerls",
 		"jsonls",
+		"lua_ls",
 		"marksman",
-		"terraformls",
 		"pyright",
+		"ruff_lsp",
+		"rust_analyzer",
+		"terraformls",
+		"tsserver",
 	},
 	-- auto-install configured servers (with lspconfig)
 	automatic_installation = true, -- not the same as ensure_installed
@@ -39,10 +40,10 @@ mason_null_ls.setup({
 	-- list of formatters & linters for mason to install
 	ensure_installed = {
 		"black",
-		"rustfmt",
-		"markdownlint",
-		"stylua", -- lua formatter
 		"eslint_d", -- ts/js linter
+		"markdownlint",
+		"rustfmt",
+		"stylua", -- lua formatter
 		"terraform_fmt",
 	},
 	-- auto-install configured formatters & linters (with null-ls)

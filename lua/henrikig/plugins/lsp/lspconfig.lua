@@ -68,10 +68,39 @@ lspconfig["html"].setup({
 	on_attach = on_attach,
 })
 
--- configure html server
 lspconfig["pyright"].setup({
 	capabilities = capabilities,
 	on_attach = on_attach,
+})
+
+-- configure ruff server
+lspconfig["ruff_lsp"].setup({
+	capabilities = capabilities,
+	on_attach = on_attach,
+	init_options = {
+		settings = {
+			args = {
+				-- inspiration from https://github.com/pola-rs/polars/blob/main/py-polars/pyproject.toml
+				"--select=E", -- pycodestyle
+				"--select=W", -- pycodestyle
+				"--select=F", -- Pyflakes
+				"--select=B", -- flake8-bugbear
+				"--select=C4", -- flake8-comprehensions
+				"--select=I", -- isort
+				"--select=SIM", -- flake8-simplify
+				"--select=TCH", -- flake8-type-checking
+				"--select=TID", -- flake8-tidy-imports
+				"--select=UP", -- pyupgrade
+				"--select=PT", -- flake8-pytest-style
+				"--select=RUF", -- Ruff-specific rules
+				"--select=PTH", -- flake8-use-pathlib
+				"--select=FA", -- flake8-future-annotations
+				"--select=PIE", -- flake8-pie
+				"--select=TRY", -- tryceratops
+				"--select=FBT001", -- flake8-boolean-trap
+			},
+		},
+	},
 })
 
 lspconfig["jsonls"].setup({
@@ -85,26 +114,6 @@ rt.setup({
 		capabilities = capabilities,
 	},
 })
-
--- lspconfig.rust_analyzer.setup({
--- 	on_attach = on_attach,
--- 	flags = {
--- 		debounce_text_changes = 150,
--- 	},
--- 	settings = {
--- 		["rust-analyzer"] = {
--- 			cargo = {
--- 				allFeatures = true,
--- 			},
--- 			completion = {
--- 				postfix = {
--- 					enable = false,
--- 				},
--- 			},
--- 		},
--- 	},
--- 	capabilities = capabilities,
--- })
 
 -- configure typescript server with plugin
 typescript.setup({

@@ -183,6 +183,7 @@ export FZF_DEFAULT_COMMAND="rg --files --hidden --follow --glob '!.git/*'"
 
 # Ruff
 export RUFF_CACHE_DIR="~/.cache/ruff"
+export RUFF_EXPERIMENTAL_FORMATTER=1
 
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.

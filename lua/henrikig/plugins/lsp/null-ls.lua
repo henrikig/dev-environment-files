@@ -17,7 +17,7 @@ null_ls.setup({
 	sources = {
 		--  to disable file types use
 		--  "formatting.prettier.with({disabled_filetypes: {}})" (see null-ls docs)
-		formatting.black, -- js/ts formatter
+		formatting.black, -- python
 		formatting.deno_fmt.with({
 			filetypes = { "markdown" }, -- only runs `deno fmt` for markdown
 		}),
