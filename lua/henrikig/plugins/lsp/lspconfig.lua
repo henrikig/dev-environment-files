@@ -76,7 +76,10 @@ lspconfig["pyright"].setup({
 -- configure ruff server
 lspconfig["ruff_lsp"].setup({
 	capabilities = capabilities,
-	on_attach = on_attach,
+	on_attach = function(client, bufnr)
+		on_attach(client, bufnr)
+		client.server_capabilities.hoverProvider = false
+	end,
 	init_options = {
 		settings = {
 			args = {
