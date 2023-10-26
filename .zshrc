@@ -181,6 +181,9 @@ alias tfsl="terraform state list"
 # fzf default command
 export FZF_DEFAULT_COMMAND="rg --files --hidden --follow --glob '!.git/*'"
 
+# Ruff
+export RUFF_CACHE_DIR="~/.cache/ruff"
+
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 # [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
