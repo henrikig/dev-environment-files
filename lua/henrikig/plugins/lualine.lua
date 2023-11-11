@@ -6,6 +6,6 @@ end
 
 lualine.setup({
 	options = {
-		theme = "catppuccin",
+		theme = "nordic",
 	},
 })
