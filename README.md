@@ -1,6 +1,35 @@
 # dev-environment-files
 
-Dev environment files for Neovim and tmux.
+Dev environment files for Neovim and tmux, zsh, ++.
+
+## Setup
+
+### Installations
+
+Below are some project dependencies, as well as some handy command line tools:
+
+Dependencies:
+
+```sh
+brew install autojump deno exa fzf neovim pure ripgrep ruff tmux
+```
+
+Optional
+
+```sh
+brew install bat dive htop pre-commit
+```
+
+### Symlinks
+
+Run the following in order to set up symlinks for development files:
+
+```sh
+ln -s .tmux.conf ~/.tmux.conf
+ln -s .zshrc ~/.zshrc
+ln -s ruff.toml ~/ruff.toml
+ln -s . ~/.config/nvim
+```
 
 ## Cheat Sheet for (n)vim commands
 
