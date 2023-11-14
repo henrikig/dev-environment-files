@@ -33,8 +33,10 @@ keymap.set("n", "<leader>+", "<C-a>") -- increment
 keymap.set("n", "<leader>-", "<C-x>") -- decrement
 
 -- move lines up/down
-keymap.set("v", "J", ":m '>+1<CR>gv=gv")
-keymap.set("v", "K", ":m '<-2<CR>gv=gv")
+keymap.set("v", "<down>", ":m '>+1<CR>gv=gv")
+keymap.set("v", "<up>", ":m '<-2<CR>gv=gv")
+keymap.set("v", "√", ":m '>+1<CR>gv=gv")
+keymap.set("v", "ª", ":m '<-2<CR>gv=gv")
 
 -- center screen after ctrl + u/d
 keymap.set("n", "<C-u>", "<C-u>zz")

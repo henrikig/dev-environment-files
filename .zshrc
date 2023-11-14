@@ -168,6 +168,14 @@ dkill() {
   docker kill "$selected_container"
 }
 
+
+alias dcu="docker-compose -f \$(rg --files --follow --glob 'docker-compose.*' --max-depth 1 | \
+  fzf --cycle --bind 'tab:toggle-up,btab:toggle-down') up --build"
+alias dcud="docker-compose -f \$(rg --files --follow --glob 'docker-compose.*' --max-depth 1 | \
+  fzf --cycle --bind 'tab:toggle-up,btab:toggle-down') up --build -d"
+alias dcd="docker-compose -f \$(rg --files --follow --glob 'docker-compose.*' --max-depth 1 | \
+  fzf --cycle --bind 'tab:toggle-up,btab:toggle-down') down"
+
 gfb() {
   git branch  | grep -v "^\*" | fzf --height=20% --info=inline --reverse --cycle --bind 'tab:toggle-down,btab:toggle-up' | xargs git checkout
 }
