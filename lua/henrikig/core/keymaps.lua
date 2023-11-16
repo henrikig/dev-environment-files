@@ -76,6 +76,7 @@ keymap.set("n", "<leader>sm", ":MaximizerToggle<CR>") -- toggle split window max
 keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>") -- toggle file explorer
 keymap.set("n", "<leader>tf", ":NvimTreeFocus<CR>") -- move cursor to tree
 keymap.set("n", "<leader>ts", ":NvimTreeFindFile<CR>") -- go to current file in tree
+keymap.set("n", "<leader>tc", ":NvimTreeCollapse<CR>") -- go to current file in tree
 
 -- telescope
 keymap.set(
