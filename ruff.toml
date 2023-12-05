@@ -31,10 +31,12 @@ ignore = [
   "PT011", # pytest.raises({exception}) is too broad, set the match parameter or use a more specific exception
   # flake8-simplify
   "SIM102", # Use a single `if` statement instead of nested `if` statements
-  # "SIM108", # Use ternary operator
+  "SIM108", # Use ternary operator
   # ruff
   # "RUF005", # unpack-instead-of-concatenating-to-collection-literal
   # pycodestyle
+  # flake8-type-checking
+  "TCH002", # Move imports to type checking block
   # flake8-todos
   "TD002", # Missing author in TODO
   "TD003", # Missing issue link on the line following this TODO
@@ -44,6 +46,8 @@ ignore = [
   "D206",
   "W191",
 ]
+
+extend-exclude = ["env"]
 
 [pycodestyle]
 max-doc-length = 88

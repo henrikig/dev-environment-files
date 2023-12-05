@@ -18,6 +18,7 @@ null_ls.setup({
 		--  to disable file types use
 		--  "formatting.prettier.with({disabled_filetypes: {}})" (see null-ls docs)
 		formatting.black, -- python
+		formatting.goimports_reviser,
 		formatting.deno_fmt.with({
 			filetypes = { "markdown" }, -- only runs `deno fmt` for markdown
 		}),
@@ -26,6 +27,7 @@ null_ls.setup({
 			filetypes = { "terraform", "terraform-vars", "tf", "tfvars" },
 		}),
 		formatting.stylua, -- lua formatter
+		diagnostics.golangci_lint,
 		diagnostics.eslint_d.with({ -- js/ts linter
 			-- only enable eslint if root has .eslintrc.js (not in youtube nvim video)
 			condition = function(utils)

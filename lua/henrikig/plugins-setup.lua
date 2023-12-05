@@ -76,6 +76,7 @@ return packer.startup(function(use)
 	use("williamboman/mason-lspconfig.nvim") -- bridges gap b/w mason & lspconfig
 	use("simrat39/inlay-hints.nvim") -- bridges gap b/w mason & lspconfig
 	use("simrat39/rust-tools.nvim")
+	use("fatih/vim-go")
 
 	-- configuring lsp servers
 	use("neovim/nvim-lspconfig") -- easily configure language servers

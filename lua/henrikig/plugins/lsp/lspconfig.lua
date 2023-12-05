@@ -16,8 +16,8 @@ if not typescript_setup then
 	return
 end
 
-local status, rt = pcall(require, "rust-tools")
-if not status then
+local rt_status, rt = pcall(require, "rust-tools")
+if not rt_status then
 	return
 end
 
@@ -108,6 +108,12 @@ typescript.setup({
 		capabilities = capabilities,
 		on_attach = on_attach,
 	},
+})
+
+-- configure css server
+lspconfig["gopls"].setup({
+	capabilities = capabilities,
+	on_attach = on_attach,
 })
 
 -- configure css server

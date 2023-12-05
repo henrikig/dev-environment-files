@@ -24,6 +24,7 @@ mason_lspconfig.setup({
 	ensure_installed = {
 		"dockerls",
 		"jsonls",
+    "gopls",
 		"lua_ls",
 		"marksman",
 		"pyright",
