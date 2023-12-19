@@ -104,13 +104,11 @@ ZSH_THEME=""
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git zsh-autosuggestions zsh-syntax-highlighting web-search aws autojump docker terraform)
+plugins=(git zsh-autosuggestions zsh-syntax-highlighting web-search aws autojump docker terraform zsh-fzf-history-search)
 
 
 
 source $ZSH/oh-my-zsh.sh
-
-
 
 # User configuration
 
@@ -170,11 +168,11 @@ dkill() {
 
 
 alias dcu="docker-compose -f \$(rg --files --follow --glob 'docker-compose.*' --max-depth 1 | \
-  fzf --cycle --bind 'tab:toggle-up,btab:toggle-down') up --build"
+  sort | fzf --cycle --bind 'tab:toggle-up,btab:toggle-down') up --build"
 alias dcud="docker-compose -f \$(rg --files --follow --glob 'docker-compose.*' --max-depth 1 | \
-  fzf --cycle --bind 'tab:toggle-up,btab:toggle-down') up --build -d"
+  sort | fzf --cycle --bind 'tab:toggle-up,btab:toggle-down') up --build -d"
 alias dcd="docker-compose -f \$(rg --files --follow --glob 'docker-compose.*' --max-depth 1 | \
-  fzf --cycle --bind 'tab:toggle-up,btab:toggle-down') down"
+  sort | fzf --cycle --bind 'tab:toggle-up,btab:toggle-down') down"
 
 gfb() {
   git branch  | grep -v "^\*" | fzf --height=20% --info=inline --reverse --cycle --bind 'tab:toggle-down,btab:toggle-up' | xargs git checkout
