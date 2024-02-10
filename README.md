@@ -14,6 +14,13 @@ Dependencies:
 brew install autojump deno exa fzf neovim pure ripgrep ruff tmux
 ```
 
+```sh
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+git clone https://github.com/joshskidmore/zsh-fzf-history-search ${ZSH_CUSTOM:=~/.oh-my-zsh/custom}/plugins/zsh-fzf-history-search
+```
+
 Optional
 
 ```sh
@@ -25,10 +32,10 @@ brew install bat dive htop pre-commit
 Run the following in order to set up symlinks for development files:
 
 ```sh
-ln -s .tmux.conf ~/.tmux.conf
-ln -s .zshrc ~/.zshrc
-ln -s ruff.toml ~/ruff.toml
-ln -s . ~/.config/nvim
+ln -s ~/dotfiles/.tmux.conf ~/.tmux.conf
+ln -s ~/dotfiles/.zshrc ~/.zshrc
+ln -s ~/dotfiles/ruff.toml ~/ruff.toml
+ln -s ~/dotfiles/. ~/.config/nvim
 ```
 
 ## Cheat Sheet for (n)vim commands
