@@ -5,6 +5,7 @@ export PATH="/opt/homebrew/bin:$PATH"
 
 export PATH="/usr/local/opt/postgresql@15/bin:$PATH"
 export PATH=$PATH:~/.docker/bin
+export PATH="$HOME/.cargo/bin:$PATH"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,

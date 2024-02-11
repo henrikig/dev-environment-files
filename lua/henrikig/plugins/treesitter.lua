@@ -20,7 +20,7 @@ treesitter.setup({
 		"css",
 		"dockerfile",
 		"gitignore",
-    "go",
+		"go",
 		"html",
 		"javascript",
 		"json",
