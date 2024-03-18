@@ -3,7 +3,7 @@
 line-length = 130
 fix = true
 
-select = [
+lint.select = [
   "E", # pycodestyle
   "W", # pycodestyle
   "F", # Pyflakes
@@ -24,7 +24,7 @@ select = [
   "FBT001", # flake8-boolean-trap
 ]
 
-ignore = [
+lint.ignore = [
   # Line length regulated by black
   "E501",
   # flake8-pytest-style:
@@ -49,14 +49,14 @@ ignore = [
 
 extend-exclude = ["env"]
 
-[pycodestyle]
+[lint.pycodestyle]
 max-doc-length = 88
 
-[flake8-tidy-imports]
+[lint.flake8-tidy-imports]
 ban-relative-imports = "all"
 
-[flake8-type-checking]
+[lint.flake8-type-checking]
 strict = true
 
-[isort]
+[lint.isort]
 force-single-line = true

@@ -151,6 +151,8 @@ alias ls="eza -la"
 alias cl="clear"
 alias vim="nvim"
 alias ff="fzf --print0 --cycle --bind 'tab:toggle-up,btab:toggle-down' | xargs -0 -o nvim"
+alias p11="python3.11 -m venv env && source env/bin/activate"
+alias gg="lazygit"
 
 # Define the function
 dkill() {
@@ -175,6 +177,8 @@ alias dcd="docker-compose -f \$(rg --files --follow --glob 'docker-compose.*' --
 gfb() {
   git branch  | grep -v "^\*" | fzf --height=20% --info=inline --reverse --cycle --bind 'tab:toggle-down,btab:toggle-up' | xargs git checkout
 }
+
+code() { VSCODE_CWD="$PWD" open -n -b "com.microsoft.VSCode" --args $* ;}
 
 
 # terraform
