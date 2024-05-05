@@ -178,6 +178,16 @@ gfb() {
   git branch  | grep -v "^\*" | fzf --height=20% --info=inline --reverse --cycle --bind 'tab:toggle-down,btab:toggle-up' | xargs git checkout
 }
 
+
+function _git_cd() {
+  root=$(git rev-parse --show-toplevel)
+  f=$(git ls-tree --name-only --full-name -rd HEAD | fzf --cycle --bind 'tab:toggle-down,btab:toggle-up')
+  cd "$root/$f" || return 1
+}
+
+zle -N _git_cd
+bindkey '^F' _git_cd
+
 code() { VSCODE_CWD="$PWD" open -n -b "com.microsoft.VSCode" --args $* ;}
 
 
@@ -206,4 +216,3 @@ export NVM_DIR="$HOME/.nvm"
 
 autoload -U +X bashcompinit && bashcompinit
 complete -o nospace -C /usr/local/bin/terraform terraform
-
