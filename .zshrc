@@ -150,9 +150,16 @@ prompt pure
 alias ls="eza -la"
 alias cl="clear"
 alias vim="nvim"
-alias ff="fzf --print0 --cycle --bind 'tab:toggle-up,btab:toggle-down' | xargs -0 -o nvim"
 alias p11="python3.11 -m venv env && source env/bin/activate"
 alias gg="lazygit"
+
+
+function _open_in_nvim() {
+  rg --files --hidden --follow --glob '!.git/*' | fzf --cycle --bind 'tab:toggle-up,btab:toggle-down' | xargs nvim
+}
+
+zle -N _open_in_nvim
+bindkey '^F' _open_in_nvim
 
 # Define the function
 dkill() {
@@ -186,7 +193,7 @@ function _git_cd() {
 }
 
 zle -N _git_cd
-bindkey '^F' _git_cd
+bindkey '^G' _git_cd
 
 code() { VSCODE_CWD="$PWD" open -n -b "com.microsoft.VSCode" --args $* ;}
 
