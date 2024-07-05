@@ -4,7 +4,6 @@ export PATH="/opt/homebrew/bin:$PATH"
 
 
 export PATH="/usr/local/opt/postgresql@15/bin:$PATH"
-export PATH=$PATH:~/.docker/bin
 export PATH="$HOME/.cargo/bin:$PATH"
 
 # Set name of the theme to load --- if set to "random", it will
@@ -106,6 +105,7 @@ plugins=(git zsh-autosuggestions zsh-syntax-highlighting web-search aws autojump
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
+export ZSH_COMPDUMP=$ZSH/cache/.zcompdump-$HOST
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
@@ -150,7 +150,7 @@ prompt pure
 alias ls="eza -la"
 alias cl="clear"
 alias vim="nvim"
-alias p11="python3.11 -m venv env && source env/bin/activate"
+alias penv="python3 -m venv env && source env/bin/activate"
 alias gg="lazygit"
 
 
@@ -208,7 +208,6 @@ export FZF_DEFAULT_COMMAND="rg --files --hidden --follow --glob '!.git/*'"
 
 # Ruff
 export RUFF_CACHE_DIR="~/.cache/ruff"
-export RUFF_EXPERIMENTAL_FORMATTER=1
 
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
