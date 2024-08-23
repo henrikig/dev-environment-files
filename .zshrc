@@ -152,6 +152,7 @@ alias cl="clear"
 alias vim="nvim"
 alias penv="python3 -m venv env && source env/bin/activate"
 alias gg="lazygit"
+alias k="kubectl"
 
 
 function _open_in_nvim() {
